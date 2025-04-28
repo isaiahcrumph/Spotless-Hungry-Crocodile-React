@@ -6,25 +6,48 @@ import PropTypes from 'prop-types'
 import './hero.css'
 
 const Hero = (props) => {
+  /* ➊ grab the ref that Home passes in */
+  const { pricingRef, onGetStarted, featureRef, ...rest} = props;
+
+  /* ➋ handler: scroll smoothly */
+  const scrollToPricing = () => {
+    if (pricingRef?.current) {
+      pricingRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToFeatures = () => {
+    if (featureRef?.current) {
+      featureRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
-    <div className={`hero-header78 ${props.rootClassName} `}>
+    <div className={`hero-header78 ${rest.rootClassName} `}>
       <div className="hero-column thq-section-padding thq-section-max-width">
         <div className="hero-content1">
-          <h1 className="hero-text1 thq-heading-1">{props.heading1}</h1>
-          <p className="hero-text2 thq-body-large">{props.content1}</p>
+          <h1 className="hero-text1 thq-heading-1">{rest.heading1}</h1>
+          <p className="hero-text2 thq-body-large">{rest.content1}</p>
         </div>
+
+        {/* ➌ FIRST BUTTON — wired to scroll */}
         <div className="hero-actions">
           <button
-            onClick={props.onGetStarted}
+            onClick={scrollToPricing}
             className="thq-button-filled hero-button1"
           >
-            <span className="thq-body-small">{props.action1}</span>
+            <span className="thq-body-small">{rest.action1}</span>
           </button>
-          <button className="thq-button-outline hero-button2">
-            <span className="thq-body-small">{props.action2}</span>
+
+          
+          <button
+          onClick={scrollToFeatures}
+           className="thq-button-outline hero-button2">
+            <span className="thq-body-small">{rest.action2}</span>
           </button>
         </div>
       </div>
+
       <div className="hero-content2">
         <div className="hero-row-container1 thq-mask-image-horizontal thq-animated-group-container-horizontal">
           <div className="thq-animated-group-horizontal">
@@ -89,72 +112,6 @@ const Hero = (props) => {
               alt="Hero Image"
               src="https://images.unsplash.com/photo-1534312527009-56c7016453e6?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDIxfHxhYnN0cmFjdHxlbnwwfHx8fDE3MTA4NzA5MzB8MA&amp;ixlib=rb-4.0.3&amp;w=1500"
               className="hero-placeholder-image21 thq-img-ratio-1-1 thq-img-scale"
-            />
-          </div>
-        </div>
-        <div className="hero-row-container2 thq-mask-image-horizontal thq-animated-group-container-horizontal">
-          <div className="thq-animated-group-horizontal-reverse">
-            <img
-              alt={props.image7Alt}
-              src={props.image7Src}
-              className="hero-placeholder-image22 thq-img-ratio-1-1 thq-img-scale"
-            />
-            <img
-              alt={props.image8Alt}
-              src={props.image8Src}
-              className="hero-placeholder-image23 thq-img-ratio-1-1 thq-img-scale"
-            />
-            <img
-              alt={props.image9Alt}
-              src={props.image9Src}
-              className="hero-placeholder-image24 thq-img-ratio-1-1 thq-img-scale"
-            />
-            <img
-              alt={props.image10Alt}
-              src={props.image10Src}
-              className="hero-placeholder-image25 thq-img-ratio-1-1 thq-img-scale"
-            />
-            <img
-              alt={props.image11Alt}
-              src={props.image11Src}
-              className="hero-placeholder-image26 thq-img-ratio-1-1 thq-img-scale"
-            />
-            <img
-              alt={props.image12Alt}
-              src={props.image12Src}
-              className="hero-placeholder-image27 thq-img-ratio-1-1 thq-img-scale"
-            />
-          </div>
-          <div className="thq-animated-group-horizontal-reverse">
-            <img
-              alt={props.image7Alt}
-              src={props.image7Src}
-              className="hero-placeholder-image28 thq-img-ratio-1-1 thq-img-scale"
-            />
-            <img
-              alt={props.image8Alt}
-              src={props.image8Src}
-              className="hero-placeholder-image29 thq-img-ratio-1-1 thq-img-scale"
-            />
-            <img
-              alt={props.image9Alt}
-              src={props.image9Src}
-              className="hero-placeholder-image30 thq-img-ratio-1-1 thq-img-scale"
-            />
-            <img
-              alt={props.image10Alt}
-              src={props.image10Src}
-              className="hero-placeholder-image31 thq-img-ratio-1-1 thq-img-scale"
-            />
-            <img
-              alt={props.image11Alt}
-              src={props.image11Src}
-              className="hero-placeholder-image32 thq-img-ratio-1-1 thq-img-scale"
-            />
-            <img
-              alt="Hero Image"
-              src="https://images.unsplash.com/photo-1568214379698-8aeb8c6c6ac8?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDEyfHxncmFmaWN8ZW58MHx8fHwxNzE1Nzk0OTk5fDA&amp;ixlib=rb-4.0.3&amp;w=1500"
-              className="hero-placeholder-image33 thq-img-ratio-1-1 thq-img-scale"
             />
           </div>
         </div>
@@ -233,6 +190,12 @@ Hero.defaultProps = {
     'https://images.unsplash.com/photo-1521804906057-1df8fdb718b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0NDkzNzA5NXw&ixlib=rb-4.0.3&q=80&w=1080',
   image9Alt: 'Nutrition consultation',
   onGetStarted: () => {},
+
+  pricingRef: null,          // new default
+  onGetStarted: () => {},
+
+  featureRef: null,        // new default
+  onGetStarted: () => {},
 }
 
 Hero.propTypes = {
@@ -265,6 +228,9 @@ Hero.propTypes = {
   action2: PropTypes.string,
   image11Src: PropTypes.string,
   image9Alt: PropTypes.string,
+  onGetStarted: PropTypes.func,
+  pricingRef: PropTypes.object,   // new type (Ref object)
+  featureRef: PropTypes.object, // new type (Ref object)
   onGetStarted: PropTypes.func,
 }
 

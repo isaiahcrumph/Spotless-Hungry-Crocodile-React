@@ -9,7 +9,7 @@ import {
 
 import './style.css'
 import Home from './views/home'
-import NotFound1, { NotFound } from './views/not-found'
+import NotFound1 from './views/not-found'
 import Page from './views/page'
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
         <Route component={Home} exact path="/" />
         <Route component={NotFound1} exact path="/not-found" />
         <Route component={Page} exact path="/page" />
-        <Route component={NotFound} path="**" />
+        <Route component={NotFound1} path="**" />
         <Redirect to="**" />
       </Switch>
     </Router>

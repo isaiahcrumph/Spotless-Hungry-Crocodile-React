@@ -92,9 +92,11 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
+              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
               <button className="pricing-button14 thq-button-animated thq-button-outline">
                 <span className="thq-body-small">{props.plan1Action}</span>
               </button>
+              </a>
             </div>
             <div className="pricing-column2 thq-card">
               <div className="pricing-price12">
@@ -140,9 +142,11 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
+              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
               <button className="pricing-button15 thq-button-animated thq-button-filled">
                 <span className="thq-body-small">{props.plan2Action}</span>
               </button>
+              </a>
             </div>
             <div className="pricing-column3 thq-card">
               <div className="pricing-price14">
@@ -196,9 +200,11 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
+              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
               <button className="pricing-button16 thq-button-animated thq-button-filled">
                 <span className="thq-body-small">{props.plan3Action}</span>
               </button>
+              </a>
             </div>
           </div>
         )}
@@ -242,9 +248,11 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
+              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
               <button className="pricing-button17 thq-button-animated thq-button-outline">
                 <span className="thq-body-small">{props.plan1Action1}</span>
               </button>
+              </a>
             </div>
             <div className="pricing-column5 thq-card">
               <div className="pricing-price18">
@@ -292,9 +300,11 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
+              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
               <button className="pricing-button18 thq-button-animated thq-button-filled">
                 <span className="thq-body-small">{props.plan2Action1}</span>
               </button>
+              </a>
             </div>
             <div className="pricing-column6 thq-card">
               <div className="pricing-price20">
@@ -350,9 +360,11 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
+              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
               <button className="pricing-button19 thq-button-animated thq-button-filled">
                 <span className="thq-body-small">{props.plan3Action1}</span>
               </button>
+              </a>
             </div>
           </div>
         )}
@@ -362,58 +374,77 @@ const Pricing = (props) => {
 }
 
 Pricing.defaultProps = {
-  plan2Feature11: 'Feature text goes here',
-  plan2Yearly: 'or $299 yearly',
-  plan3Feature51: 'Feature text goes here',
-  plan1Feature2: 'Nutritional guidance',
-  plan2Feature1: 'Everything in Plan 1, plus:',
-  plan11: 'Basic plan',
-  heading1: 'Pricing plan',
-  plan3Feature11: 'Feature text goes here',
-  plan1: 'Basic plan',
-  plan2Feature4: 'Feature text goes here',
-  plan21: 'Business plan',
-  plan1Action1: 'Get started',
-  plan31: 'Enterprise plan',
-  plan2Price: '$149/month',
-  plan3Feature3: 'Customized meal plans',
-  plan1Feature11: 'Feature text goes here',
-  plan3Action1: 'Get started',
-  plan3Price: '$199/month',
-  plan1Feature31: 'Feature text goes here',
-  plan1Price: '$99/month',
-  plan3Yearly: 'or $499 yearly',
-  plan3Feature31: 'Feature text goes here',
-  plan3Yearly1: 'or $49 monthly',
-  plan3Price1: '$499/yr',
-  plan3: 'Enterprise plan',
-  content2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
-  plan3Feature5: 'Feature text goes here',
-  plan3Feature21: 'Feature text goes here',
-  plan1Feature21: 'Feature text goes here',
-  plan3Feature41: 'Feature text goes here',
-  plan1Feature3: 'Weekly check-ins with Tony',
-  plan2Feature2: 'Access to exclusive workout videos',
-  plan2Price1: '$299/yr',
-  plan1Action: 'Sign up now',
-  content1: 'Choose the perfect plan for you',
-  plan3Feature1: 'Everything in Plan 2, plus:',
-  plan1Price1: '$200/yr',
-  plan1Feature1: 'Personalized workout plans',
-  plan2Feature31: 'Feature text goes here',
-  plan3Feature2: '24/7 support from Tony',
-  plan2Feature3: 'Monthly video call with Tony',
-  plan1Yearly: 'or $200 yearly',
-  plan2Feature21: 'Feature text goes here',
-  plan2Yearly1: 'or $29 monthly',
-  plan2: 'Business plan',
-  plan3Action: 'Sign up now',
-  plan2Action1: 'Get started',
-  plan2Feature41: 'Feature text goes here',
-  plan2Action: 'Sign up now',
-  plan3Feature4: 'Feature text goes here',
-  plan1Yearly1: 'or $20 monthly',
-  rootClassName: '',
+/* ─────────────────────────────────────────────────────────────
+     SECTION HEADERS
+  ───────────────────────────────────────────────────────────── */
+  content1 : 'Find the coaching tier that matches your goals',
+  heading1 : 'Tony Montana Coaching Packages',
+  content2 : 'Every package blends science-backed programming with Tony’s no-nonsense accountability. Cancel any time.',
+  /* ─────────────────────────────────────────────────────────────
+     MONTHLY TAB  (plan1 / plan2 / plan3)
+  ───────────────────────────────────────────────────────────── */
+  /* Starter ——————————————— */
+  plan1            : 'Starter plan',
+  plan1Price       : '$99/month',
+  plan1Yearly      : 'or $999 yearly (save 2 months)',
+  plan1Feature1    : 'Custom 4-week workout plan',
+  plan1Feature2    : 'Macro-friendly meal template',
+  plan1Feature3    : 'Weekly e-mail accountability check-in',
+  plan1Action      : 'Start now',
+  /* Business —————————————— */
+  plan2            : 'Business plan',
+  plan2Price       : '$149/month',
+  plan2Yearly      : 'or $1,499 yearly (save 3 months)',
+  plan2Feature1    : 'Everything in Starter, plus:',
+  plan2Feature2    : 'Bi-weekly 30-min video call with Tony',
+  plan2Feature3    : 'Exclusive workout-demo video library',
+  plan2Feature4    : 'Priority e-mail support',
+  plan2Action      : 'Go Business',
+  /* Enterprise ——————————— */
+  plan3            : 'Enterprise plan',
+  plan3Price       : '$199/month',
+  plan3Yearly      : 'or $1,999 yearly (save 4 months)',
+  plan3Feature1    : 'Everything in Business, plus:',
+  plan3Feature2    : 'Unlimited 1-on-1 Zoom sessions',
+  plan3Feature3    : '24/7 WhatsApp chat support',
+  plan3Feature4    : 'Monthly deep-dive progress analysis',
+  plan3Feature5    : 'Custom meal-prep & grocery lists',
+  plan3Action      : 'Dominate Now',
+  /* ─────────────────────────────────────────────────────────────
+     YEARLY TAB  (plan11 / plan21 / plan31)
+     TeleportHQ generated a second set of props for the Yearly
+     column components; mirror the same copy but with yearly
+     prices so the Yearly tab makes sense on its own.
+  ───────────────────────────────────────────────────────────── */
+  /* Starter ——————————————— */
+  plan11           : 'Starter plan',
+  plan1Price1      : '$999/yr',
+  plan1Yearly1     : '≈ $99 monthly',
+  plan1Feature11   : 'Custom 4-week workout plan',
+  plan1Feature21   : 'Macro-friendly meal template',
+  plan1Feature31   : 'Weekly e-mail accountability check-in',
+  plan1Action1     : 'Start now',
+  /* Business —————————————— */
+  plan21           : 'Business plan',
+  plan2Price1      : '$1,499/yr',
+  plan2Yearly1     : '≈ $149 monthly',
+  plan2Feature11   : 'Everything in Starter, plus:',
+  plan2Feature21   : 'Bi-weekly 30-min video call with Tony',
+  plan2Feature31   : 'Exclusive workout-demo video library',
+  plan2Feature41   : 'Priority e-mail support',
+  plan2Action1     : 'Go Business',
+  /* Enterprise ——————————— */
+  plan31           : 'Enterprise plan',
+  plan3Price1      : '$1,999/yr',
+  plan3Yearly1     : '≈ $199 monthly',
+  plan3Feature11   : 'Everything in Business, plus:',
+  plan3Feature21   : 'Unlimited 1-on-1 Zoom sessions',
+  plan3Feature31   : '24/7 WhatsApp chat support',
+  plan3Feature41   : 'Monthly deep-dive progress analysis',
+  plan3Feature51   : 'Custom meal-prep & grocery lists',
+  plan3Action1     : 'Dominate Now',
+  /* ───────────────────────────────────────────────────────────── */
+  rootClassName    : '',
 }
 
 Pricing.propTypes = {

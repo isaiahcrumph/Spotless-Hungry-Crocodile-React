@@ -5,6 +5,15 @@ import PropTypes from 'prop-types'
 import './cta.css'
 
 const CTA = (props) => {
+  const { pricingRef, onGetStarted } = props;
+
+
+  const scrollToPricing = () => {
+    if (pricingRef?.current) {
+      pricingRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="thq-section-padding">
       <div className="thq-section-max-width">
@@ -16,7 +25,9 @@ const CTA = (props) => {
                 <p className="thq-body-large">{props.content1}</p>
               </div>
               <div className="cta-actions">
-                <button type="button" className="thq-button-filled cta-button">
+                <button 
+                onClick={scrollToPricing}
+                type="button" className="thq-button-filled cta-button">
                   {props.action1}
                 </button>
               </div>
@@ -33,12 +44,17 @@ CTA.defaultProps = {
   heading1: 'Ready to transform your body?',
   content1:
     'Take the first step towards a healthier lifestyle with personalized fitness plans designed by Tony Montana.',
-}
+
+    pricingRef: null,          // new default
+  onGetStarted: () => {},
+  }
 
 CTA.propTypes = {
   action1: PropTypes.string,
   heading1: PropTypes.string,
   content1: PropTypes.string,
+  pricingRef: PropTypes.object,   // new type (Ref object)
+  
 }
 
 export default CTA
