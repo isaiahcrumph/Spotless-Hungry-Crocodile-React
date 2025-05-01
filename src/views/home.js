@@ -30,7 +30,7 @@ const Home = () => {
       </Helmet>
 
       {/*   PAGE SECTIONS -------------------------------------------------- */}
-      <Navbar />
+      <Navbar featureRef={featureRef} pricingRef={pricingRef} />
 
       {/* -- HERO ----------------------------------------------------------- */}
       <Hero

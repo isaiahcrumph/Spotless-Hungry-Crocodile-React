@@ -1,39 +1,55 @@
-/* Main navbar container */
+/*  =======  legacy navbar rules (disabled)  =======
 .navbar-container {
   width: 100%;
   display: flex;
-  justify-content: flex-start; /* Align content to the left */
+  justify-content: flex-start;     
   background-color: var(--dl-color-theme-neutral-light);
-  padding: 0; /* Remove any padding */
-  margin: 0; /* Remove any margin */
+  padding: 0;
+  margin: 0;
 }
 
-/* Navbar content container (holds the logo) */
 .navbar-navbar-interactive {
   width: 100%;
   display: flex;
   max-width: var(--dl-layout-size-maxwidth);
-  align-items: center; /* Center vertically */
-  justify-content: flex-start; /* Keep everything aligned to the left */
-  padding: var(--dl-layout-space-twounits); /* Control padding for spacing */
-  position: relative; /* Prevent unintended shifts */
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--dl-layout-space-twounits);
+  position: relative;
 }
 
-/* Logo styling to ensure left alignment */
 .navbar-image1 {
   height: 3rem;
-  margin-right: 0; /* Reset any margin */
-  margin-left: 0; /* Reset any margin */
-  flex-grow: 0; /* Prevent the logo from growing */
-  position: relative; /* Ensure it stays in place */
+  margin-right: 0;
+  margin-left: 0;
+  flex-grow: 0;
+  position: relative;
 }
- 
+
 .navbar-desktop-menu {
   flex: 1;
   display: flex;
   justify-content: center;
-  gap: var(--dl-layout-space-unit); /* add this */
+  gap: var(--dl-layout-space-unit);
 }
+
+.navbar-burger-menu { display: none; }
+
+.navbar-icon1 { width: var(--dl-layout-size-xsmall); height: var(--dl-layout-size-xsmall); }
+
+.navbar-mobile-menu {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  padding: var(--dl-layout-space-twounits);
+  z-index: 100;
+  position: absolute;
+  flex-direction: column;
+  background-color: var(--dl-color-theme-neutral-light);
+}
+=======  end legacy navbar rules  ======= 
  
 .navbar-burger-menu {
   display: none;
@@ -101,27 +117,78 @@
   margin-top: var(--dl-layout-space-twounits);
   align-items: center;
 }
- 
-@media(max-width: 900px) {
-  .navbar-navbar-interactive {
-    padding-left: var(--dl-layout-space-twounits);
-    padding-right: var(--dl-layout-space-twounits);
-  }
-  .navbar-desktop-menu {
-    display: none;
-  }
-  .navbar-burger-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+ */
+/* ------------------------------------------------------------------
+   Core layout
+ ------------------------------------------------------------------ */
+
+/* ==================================================================
+   Tony Montana Fitness – Navbar
+   ─ 3-column grid (logo | links | buttons)
+   ─ Burger + slide-out on ≤900 px
+================================================================== */
+
+/* ---------- Top bar ------------------------------------------- */
+.navbar__bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;   /* logo | links | buttons */
+  align-items: center;
+  gap: 13rem;
+  padding: var(--dl-layout-space-twounits);
+  background: var(--dl-color-theme-neutral-light);
 }
- 
-@media(max-width: 627px) {
-  .navbar-navbar-interactive {
-    padding: var(--dl-layout-space-unit);
-  }
-  .navbar-mobile-menu {
-    padding: var(--dl-layout-space-unit);
-  }
+
+/* ---------- Logo ---------------------------------------------- */
+.navbar__logo {
+  height: 3rem;          /* sits in the left grid track */
+}
+
+/* ---------- Desktop link row (centre column) ------------------ */
+.navbar__links {
+  display: flex;
+  justify-content: center;               /* optically centred */
+  gap: var(--dl-layout-space-unit);
+  white-space: nowrap;                   /* prevent wrapping */
+}
+
+/* ---------- Desktop CTA buttons (right column) ---------------- */
+.navbar__buttons {
+  display: flex;
+  gap: var(--dl-layout-space-unit);
+}
+
+/* ---------- Burger icon / mobile container -------------------- */
+.navbar__burger  { display: none; border: 0; background: none; }
+.navbar__mobile  { display: none; }  /* TeleportHQ handles show/hide */
+
+/* ---------- ≤900 px  – hide links & buttons, show burger ------- */
+@media (max-width: 900px) {
+  .navbar__links,
+  .navbar__buttons { display: none; }
+  .navbar__burger  { display: block; }
+}
+
+/* ---------- Arrow rotation (dropdown / accordion) ------------- */
+.navbar__arrow       { width: 0.7rem; transition: transform .2s ease; }
+.navbar__arrow.open  { transform: rotate(90deg); }
+
+/* ---------- Mega dropdown (desktop) --------------------------- */
+.navbar__dropdown {
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--dl-color-theme-neutral-light);
+  z-index: 99;
+}
+.navbar__item      { display: flex; gap: 0.75rem; }
+.navbar__item-img  { width: 48px; height: 48px; object-fit: cover; }
+
+/* ---------- Accordion content (mobile) ------------------------ */
+.navbar__accordion-content {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
