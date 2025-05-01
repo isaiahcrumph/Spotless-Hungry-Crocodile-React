@@ -1,25 +1,31 @@
+/* Main navbar container */
 .navbar-container {
   width: 100%;
   display: flex;
-  position: relative;
-  justify-content: center;
+  justify-content: flex-start; /* Align content to the left */
   background-color: var(--dl-color-theme-neutral-light);
+  padding: 0; /* Remove any padding */
+  margin: 0; /* Remove any margin */
 }
- 
+
+/* Navbar content container (holds the logo) */
 .navbar-navbar-interactive {
   width: 100%;
   display: flex;
   max-width: var(--dl-layout-size-maxwidth);
-  align-items: center;
-  padding-top: var(--dl-layout-space-twounits);
-  padding-left: var(--dl-layout-space-threeunits);
-  padding-right: var(--dl-layout-space-threeunits);
-  padding-bottom: var(--dl-layout-space-twounits);
-  justify-content: space-between;
+  align-items: center; /* Center vertically */
+  justify-content: flex-start; /* Keep everything aligned to the left */
+  padding: var(--dl-layout-space-twounits); /* Control padding for spacing */
+  position: relative; /* Prevent unintended shifts */
 }
- 
+
+/* Logo styling to ensure left alignment */
 .navbar-image1 {
   height: 3rem;
+  margin-right: 0; /* Reset any margin */
+  margin-left: 0; /* Reset any margin */
+  flex-grow: 0; /* Prevent the logo from growing */
+  position: relative; /* Ensure it stays in place */
 }
  
 .navbar-desktop-menu {

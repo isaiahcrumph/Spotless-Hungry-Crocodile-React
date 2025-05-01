@@ -92,7 +92,7 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
-              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
+              <a href="https://buy.stripe.com/test_fZe5no99wh0RaD65kq">
               <button className="pricing-button14 thq-button-animated thq-button-outline">
                 <span className="thq-body-small">{props.plan1Action}</span>
               </button>
@@ -142,7 +142,7 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
-              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
+              <a href="https://buy.stripe.com/test_7sI6rs2L8dOF3aE28d">
               <button className="pricing-button15 thq-button-animated thq-button-filled">
                 <span className="thq-body-small">{props.plan2Action}</span>
               </button>
@@ -200,7 +200,7 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
-              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
+              <a href="https://buy.stripe.com/test_dR6g223PcaCt9z2eUY">
               <button className="pricing-button16 thq-button-animated thq-button-filled">
                 <span className="thq-body-small">{props.plan3Action}</span>
               </button>
@@ -248,7 +248,7 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
-              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
+              <a href="https://buy.stripe.com/test_4gw2bc5Xk11TaD63cd">
               <button className="pricing-button17 thq-button-animated thq-button-outline">
                 <span className="thq-body-small">{props.plan1Action1}</span>
               </button>
@@ -300,7 +300,7 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
-              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
+              <a href="https://buy.stripe.com/test_dR6034gBYh0R7qUdQS">
               <button className="pricing-button18 thq-button-animated thq-button-filled">
                 <span className="thq-body-small">{props.plan2Action1}</span>
               </button>
@@ -360,7 +360,7 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
-              <a href="https://buy.stripe.com/test_fZecPQ2L825X26AcMM">
+              <a href="https://buy.stripe.com/test_dR62bcetQ6mdfXq4gj">
               <button className="pricing-button19 thq-button-animated thq-button-filled">
                 <span className="thq-body-small">{props.plan3Action1}</span>
               </button>
@@ -399,7 +399,7 @@ Pricing.defaultProps = {
   plan2Feature2    : 'Bi-weekly 30-min video call with Tony',
   plan2Feature3    : 'Exclusive workout-demo video library',
   plan2Feature4    : 'Priority e-mail support',
-  plan2Action      : 'Go Business',
+  plan2Action      : 'Start now',
   /* Enterprise ——————————— */
   plan3            : 'Enterprise plan',
   plan3Price       : '$199/month',
@@ -409,7 +409,7 @@ Pricing.defaultProps = {
   plan3Feature3    : '24/7 WhatsApp chat support',
   plan3Feature4    : 'Monthly deep-dive progress analysis',
   plan3Feature5    : 'Custom meal-prep & grocery lists',
-  plan3Action      : 'Dominate Now',
+  plan3Action      : 'Start now',
   /* ─────────────────────────────────────────────────────────────
      YEARLY TAB  (plan11 / plan21 / plan31)
      TeleportHQ generated a second set of props for the Yearly
@@ -432,7 +432,7 @@ Pricing.defaultProps = {
   plan2Feature21   : 'Bi-weekly 30-min video call with Tony',
   plan2Feature31   : 'Exclusive workout-demo video library',
   plan2Feature41   : 'Priority e-mail support',
-  plan2Action1     : 'Go Business',
+  plan2Action1     : 'Start now',
   /* Enterprise ——————————— */
   plan31           : 'Enterprise plan',
   plan3Price1      : '$1,999/yr',
@@ -442,7 +442,7 @@ Pricing.defaultProps = {
   plan3Feature31   : '24/7 WhatsApp chat support',
   plan3Feature41   : 'Monthly deep-dive progress analysis',
   plan3Feature51   : 'Custom meal-prep & grocery lists',
-  plan3Action1     : 'Dominate Now',
+  plan3Action1     : 'Start now',
   /* ───────────────────────────────────────────────────────────── */
   rootClassName    : '',
 }
