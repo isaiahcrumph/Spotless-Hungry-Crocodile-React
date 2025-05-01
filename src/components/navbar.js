@@ -1,51 +1,73 @@
-import React from 'react'
+/* ------------------------------------------------------------------
+ *  Navbar.jsx  – desktop–first nav with responsive burger menu
+ * ------------------------------------------------------------------ */
 
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import './navbar.css'
-
 import tmLogo from '../assets/tmLogo.svg'
 
-const Navbar = (props) => {
+const Navbar = ({
+  logoAlt  = 'Tony Montana Fitness Consultant',
+  logoSrc  = tmLogo,
+  link1    = 'Home',
+  link2    = 'About',
+  link3    = 'Services',
+  link4    = 'Testimonials',
+  link5    = 'Contact',
+  action1  = 'Sign up',
+  action2  = 'Log in',
+}) => {
   return (
     <header className="navbar-container">
       <header data-thq="thq-navbar" className="navbar-navbar-interactive">
-        <img
-          alt={props.logoAlt}
-          src={props.logoSrc}
-          className="navbar-image1"
-        />
-        <div data-thq="thq-navbar-nav" className="navbar-desktop-menu"></div>
+
+        {/* brand mark */}
+        <img alt={logoAlt} src={logoSrc} className="navbar-image1" />
+
+        {/* ---------- DESKTOP NAVIGATION ---------- */}
+        <nav data-thq="thq-navbar-nav" className="navbar-desktop-menu">
+          <span className="thq-link thq-body-small">{link1}</span>
+          <span className="thq-link thq-body-small">{link2}</span>
+          <span className="thq-link thq-body-small">{link3}</span>
+          <span className="thq-link thq-body-small">{link4}</span>
+          <span className="thq-link thq-body-small">{link5}</span>
+        </nav>
+
+        {/* ---------- BURGER ICON (mobile only) ---------- */}
         <div data-thq="thq-burger-menu" className="navbar-burger-menu">
           <svg viewBox="0 0 1024 1024" className="navbar-icon1">
-            <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
+            <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"/>
           </svg>
         </div>
+
+        {/* ---------- MOBILE SLIDE-OUT MENU ---------- */}
         <div data-thq="thq-mobile-menu" className="navbar-mobile-menu">
           <div className="navbar-nav">
             <div className="navbar-top">
-              <img
-                alt={props.logoAlt}
-                src={props.logoSrc}
-                className="navbar-logo"
-              />
+              <img alt={logoAlt} src={logoSrc} className="navbar-logo" />
               <div data-thq="thq-close-menu" className="navbar-close-menu">
                 <svg viewBox="0 0 1024 1024" className="navbar-icon3">
-                  <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
+                  <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"/>
                 </svg>
               </div>
             </div>
+
+            {/* same five links for mobile */}
             <nav className="navbar-links">
-              <span className="thq-link thq-body-small">{props.link1}</span>
-              <span className="thq-link thq-body-small">{props.link2}</span>
-              <span className="thq-link thq-body-small">{props.link3}</span>
-              <span className="thq-link thq-body-small">{props.link4}</span>
-              <span className="thq-link thq-body-small">{props.link5}</span>
+              <span className="thq-link thq-body-small">{link1}</span>
+              <span className="thq-link thq-body-small">{link2}</span>
+              <span className="thq-link thq-body-small">{link3}</span>
+              <span className="thq-link thq-body-small">{link4}</span>
+              <span className="thq-link thq-body-small">{link5}</span>
             </nav>
           </div>
+
+          {/* action buttons */}
           <div className="navbar-buttons">
-            <button className="thq-button-filled">Login</button>
-            <button className="thq-button-outline">Register</button>
+            <button className="thq-button-filled">{action2}</button>
+            <button className="thq-button-outline">{action1}</button>
           </div>
         </div>
       </header>
@@ -53,29 +75,16 @@ const Navbar = (props) => {
   )
 }
 
-Navbar.defaultProps = {
-  link5: 'Contact',
-  link1: 'Home',
-  link4: 'Testimonials',
-  action2: 'Log in',
-  logoSrc:
-    tmLogo,
-  link3: 'Services',
-  logoAlt: 'Tony Montana Fitness Consultant',
-  action1: 'Sign up',
-  link2: 'About',
-}
-
 Navbar.propTypes = {
-  link5: PropTypes.string,
-  link1: PropTypes.string,
-  link4: PropTypes.string,
-  action2: PropTypes.string,
-  logoSrc: PropTypes.string,
-  link3: PropTypes.string,
   logoAlt: PropTypes.string,
+  logoSrc: PropTypes.string,
+  link1:   PropTypes.string,
+  link2:   PropTypes.string,
+  link3:   PropTypes.string,
+  link4:   PropTypes.string,
+  link5:   PropTypes.string,
   action1: PropTypes.string,
-  link2: PropTypes.string,
+  action2: PropTypes.string,
 }
 
 export default Navbar

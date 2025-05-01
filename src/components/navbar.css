@@ -32,6 +32,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  gap: var(--dl-layout-space-unit); /* add this */
 }
  
 .navbar-burger-menu {
